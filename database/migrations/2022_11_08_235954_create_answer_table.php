@@ -13,9 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('question_options', function (Blueprint $table) {
+        Schema::create('answers', function (Blueprint $table) {
             $table->id();
-            $table->string('option_text');
+            $table->string('answer_text');
             $table->integer('is_correct')->nullable()->default(0);
             $table->integer('sort_order')->nullable()->default(0);
             $table->foreignId('question_id')->references('id')->on('questions')->onDelete('cascade');
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('question_options');
+        Schema::dropIfExists('answers');
     }
 };

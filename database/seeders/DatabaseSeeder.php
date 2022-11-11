@@ -20,52 +20,52 @@ class DatabaseSeeder extends Seeder
         \App\Models\Quiz::factory(3)->create();
 
         $quiz1->questions()->create(['id' => 72, 'question' => 'What is the colour of the ocean?'])
-            ->options()->createMany([
-                ['option_text' => 'Blue', 'is_correct' => 1],
-                ['option_text' => 'Yellow'],
-                ['option_text' => 'Pink'],
-                ['option_text' => 'Green'],
+            ->answers()->createMany([
+                ['answer_text' => 'Blue', 'is_correct' => 1],
+                ['answer_text' => 'Yellow'],
+                ['answer_text' => 'Pink'],
+                ['answer_text' => 'Green'],
             ]);
 
         $quiz1->questions()->create(['question' => 'Is fire hot?'])
-            ->options()->createMany([
-                ['option_text' => 'Yes', 'is_correct' => 1],
-                ['option_text' => 'No'],
+            ->answers()->createMany([
+                ['answer_text' => 'Yes', 'is_correct' => 1],
+                ['answer_text' => 'No'],
             ]);
 
         $quiz1->questions()->create(['question' => 'How many wheels does a car have?'])
-            ->options()->createMany([
-                ['option_text' => '4', 'is_correct' => 1],
-                ['option_text' => '128'],
-                ['option_text' => '16'],
-                ['option_text' => '2'],
+            ->answers()->createMany([
+                ['answer_text' => '4', 'is_correct' => 1],
+                ['answer_text' => '128'],
+                ['answer_text' => '16'],
+                ['answer_text' => '2'],
             ]);
 
         $quiz1->questions()->create(['question' => '247 is greater than 987'])
-            ->options()->createMany([
-                ['option_text' => 'True'],
-                ['option_text' => 'False', 'is_correct' => 1],
+            ->answers()->createMany([
+                ['answer_text' => 'True'],
+                ['answer_text' => 'False', 'is_correct' => 1],
             ]);
 
         $quiz2->questions()->create(['id' => 427, 'question' => 'What color is the sun?'])
-            ->options()->createMany([
-                ['id' => 80, 'option_text' => 'Blue'],
-                ['option_text' => 'Yellow', 'is_correct' => 1],
-                ['option_text' => 'Red'],
+            ->answers()->createMany([
+                ['id' => 80, 'answer_text' => 'Blue'],
+                ['answer_text' => 'Yellow', 'is_correct' => 1],
+                ['answer_text' => 'Red'],
             ]);
 
         $quiz2->questions()->create(['question' => 'Capital of France?'])
-            ->options()->createMany([
-                ['option_text' => 'Toulouse'],
-                ['option_text' => 'Paris', 'is_correct' => 1],
-                ['option_text' => 'Lyon'],
+            ->answers()->createMany([
+                ['answer_text' => 'Toulouse'],
+                ['answer_text' => 'Paris', 'is_correct' => 1],
+                ['answer_text' => 'Lyon'],
             ]);
 
         $quiz2->questions()->create(['question' => 'NBA: A stands for...?'])
-            ->options()->createMany([
-                ['option_text' => 'Association', 'is_correct' => 1],
-                ['option_text' => 'America'],
-                ['option_text' => 'Act'],
+            ->answers()->createMany([
+                ['answer_text' => 'Association', 'is_correct' => 1],
+                ['answer_text' => 'America'],
+                ['answer_text' => 'Act'],
             ]);
     }
 }

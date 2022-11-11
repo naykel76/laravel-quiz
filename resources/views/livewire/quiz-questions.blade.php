@@ -1,6 +1,9 @@
 <div>
 
+    <x-gotime-errors />
+
     <div class="bx">
+
         <div class="mb">
             <x-gt-button-add wire:click.prevent="create" button-text="Add Question" />
         </div>
@@ -19,12 +22,15 @@
             </div>
 
         @empty
+
             <p class="fw7">There are no questions available for this quiz.</p>
+
         @endforelse
+
     </div>
 
-    {{-- @if(!$showModal) --}}
-    <div class="bx">
+    {{-- <x-gt-modal wire:model="showModal"> --}}
+
         <form wire:submit.prevent>
 
             <x-gt-input wire:model.defer="editing.question" for="editing.question" label="Question" inline />
@@ -34,29 +40,31 @@
 
             <hr>
 
-            <div class="my space-y-05">
-                <div class="flex space-between mb">
-                    <div class="bx-title">Answer Options</div>
-                    {{-- each time this is clicked a new empty option is created --}}
-                    <x-gt-button-add wire:click.prevent="addEmptyRow" button-text="Add Option" />
-                </div>
+            <div class="my">
 
-                @forelse($options as $index => $answerOption)
+                <div class="bx-title">Answer Options</div>
+
+                @forelse($answers as $index => $answer)
                     <div class="flex gg">
-                        <x-gt-input wire:model.defer="editing.option.{{ $index }}" for="editing.option.{{ $index }}" label="Answer Option {{ $index + 1 }}" inline rowClass="fg1" />
+                        <x-gt-input wire:model.defer="answers.{{ $index }}.answer_text"
+                            for="answers.{{ $index }}.answer_text" rowClass="fg1" />
                         <button wire:click.prevent="removeOption({{ $index }})" class="btn danger">Delete</button>
                     </div>
                 @empty
                     There are no answer options!
                 @endforelse
+
             </div>
 
         </form>
 
-        <div class="bx-footer tar">
+        <div class="bx-footer flex space-between">
+
+            <x-gt-button-add wire:click.prevent="addEmptyRow" button-text="Add Option" />
             <x-gt-button-save wire:click.prevent="save" button-text="Save All" />
+
         </div>
-    </div>
-    {{-- @endif --}}
+
+    {{-- </x-gt-modal> --}}
 
 </div>
