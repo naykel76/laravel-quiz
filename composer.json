@@ -13,8 +13,8 @@
         "laravel/framework": "^9.33",
         "laravel/sanctum": "^2.14.1",
         "laravel/tinker": "^2.7",
-        "naykel/iconit": "dev-master",
-        "naykel/gotime": "dev-master"
+        "naykel/gotime": "dev-master",
+        "naykel/iconit": "dev-master"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",

@@ -17,6 +17,8 @@ class DatabaseSeeder extends Seeder
         $quiz1 = \App\Models\Quiz::create(['title' => 'Quiz One']);
         $quiz2 = \App\Models\Quiz::create(['title' => 'Quiz Two']);
 
+        \App\Models\Quiz::factory(3)->create();
+
         $quiz1->questions()->create(['id' => 72, 'question' => 'What is the colour of the ocean?'])
             ->options()->createMany([
                 ['option_text' => 'Blue', 'is_correct' => 1],
