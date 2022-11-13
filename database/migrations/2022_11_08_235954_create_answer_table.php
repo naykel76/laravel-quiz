@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('answer_text');
             $table->integer('is_correct')->nullable()->default(0);
             $table->integer('sort_order')->nullable()->default(0);
-            $table->foreignId('question_id')->references('id')->on('questions')->onDelete('cascade');
+            $table->foreignId('question_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

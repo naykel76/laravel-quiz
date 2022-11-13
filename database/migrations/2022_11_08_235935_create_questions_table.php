@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('question');
             $table->integer('sort_order')->nullable()->default(0);
-            $table->foreignId('quiz_id')->references('id')->on('quizzes');
+            $table->foreignId('quiz_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }
