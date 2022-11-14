@@ -26,17 +26,6 @@ class CreateEditQuiz extends Component
         'editing.title.required' => 'The quiz title is required.',
     ];
 
-    /**
-     * Validate and persist new quiz
-     */
-    public function save()
-    {
-        $this->validate();
-        $this->editing->save();
-        $this->dispatchBrowserEvent('notify', ($this->message ?? 'Saved!'));
-        $this->emit('refreshComponent');
-    }
-
     public function render()
     {
         return view('livewire.create-edit-quiz');

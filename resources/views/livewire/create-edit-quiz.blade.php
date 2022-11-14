@@ -1,31 +1,29 @@
 <div>
 
-    <div class="bx">
+    @if($showModal)
 
-        <form wire:submit.prevent="save">
+        <div class="bx">
 
-            <x-gt-input wire:model.defer="editing.title" for="editing.title" label="Quiz Title" />
-            <x-gt-input wire:model.defer="editing.sort_order" for="editing.sort_order" label="Order" />
+            <form wire:submit.prevent="save">
 
-            <div class="tar">
-                <x-gt-button-save wire:model.prevent="save" />
-            </div>
+                <x-gt-input wire:model.defer="editing.title" for="editing.title" label="Quiz Title" />
 
-        </form>
+                <div class="tar">
+                    <x-gt-button-save wire:model.prevent="save" />
+                </div>
 
-        <div class="bx-title">Quiz Questions</div>
+            </form>
 
-        @if(isset($editing->id))
-            <livewire:create-question-answers :quiz-id="$editing->id" />
-        @else
-            <div class="bx warning-light">You must save the quiz before you can add the questions.</div>
-        @endif
+            {{-- quiz questions --}}
+            @if(isset($editing->id))
+                {{-- force the child component to mount each time the parent changes to make sure questions update --}}
+                <livewire:create-question-answers key="{{ Str::random() }}" :quiz-id="$editing->id" />
+            @else
+                <div class="bx warning-light">You must save the quiz before you can add the questions.</div>
+            @endif
 
-    </div>
+        </div>
 
-    <div class="bx light pxy-05 txt-sm">
-        <strong>Show Modal:</strong> {{ $showModal ? 'True' : 'False' }} &nbsp;
-        <strong>Editing Object:</strong> {{ $editing ?? 'Not Available' }} &nbsp;
-    </div>
+    @endif
 
 </div>

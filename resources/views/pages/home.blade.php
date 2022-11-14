@@ -11,9 +11,4 @@
     <p>This component typically appears when the 'add', or 'edit' button is pressed and then redirects to a designated route or opens the component in a modal.</p>
     <livewire:create-edit-quiz />
 
-    <h2>Create Question Answers</h2>
-    <p class="lead">Display a list of questions filtered by the selected question ID</p>
-    <p>This component normally sits inside <code>create-edit-quiz</code> component</p>
-
-
 </x-gotime-app-layout>
