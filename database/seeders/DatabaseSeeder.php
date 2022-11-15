@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
 
         // \App\Models\Quiz::factory(3)->create();
 
-        $quiz1->questions()->create(['question' => 'This question has no options for testing?']);
+        // $quiz1->questions()->create(['question' => 'This question has no options for testing?']);
 
         $quiz1->questions()->create(['id' => 72, 'question' => 'What is the colour of the ocean?'])
             ->answers()->createMany([

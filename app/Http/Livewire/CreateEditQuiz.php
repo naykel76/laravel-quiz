@@ -26,6 +26,20 @@ class CreateEditQuiz extends Component
         'editing.title.required' => 'The quiz title is required.',
     ];
 
+    public function mount()
+    {
+        $this->testing();
+    }
+
+    /**
+     * This function loads testing data and can be removed
+     */
+    public function testing()
+    {
+        $this->showModal = true;
+        $this->editing = self::$model::find(2);
+    }
+
     public function render()
     {
         return view('livewire.create-edit-quiz');

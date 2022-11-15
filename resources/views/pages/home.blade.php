@@ -7,7 +7,7 @@
     <livewire:quiz-table />
 
     <h2>Create/Edit Quiz</h2>
-    <p class="lead">The <code>create-edit-quiz</code> component displays provides the CRUD logic to to add or edit the a quiz.</p>
+    <p class="lead">The <code>create-edit-quiz</code> component provides the CRUD logic to to add or edit the a quiz.</p>
     <p>This component typically appears when the 'add', or 'edit' button is pressed and then redirects to a designated route or opens the component in a modal.</p>
     <livewire:create-edit-quiz />
 

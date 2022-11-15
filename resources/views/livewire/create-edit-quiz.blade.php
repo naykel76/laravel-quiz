@@ -17,7 +17,7 @@
             {{-- quiz questions --}}
             @if(isset($editing->id))
                 {{-- force the child component to mount each time the parent changes to make sure questions update --}}
-                <livewire:create-question-answers key="{{ Str::random() }}" :quiz-id="$editing->id" />
+                <livewire:create-edit-question-answers key="{{ Str::random() }}" :quiz-id="$editing->id" />
             @else
                 <div class="bx warning-light">You must save the quiz before you can add the questions.</div>
             @endif
