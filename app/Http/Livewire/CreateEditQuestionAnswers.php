@@ -11,7 +11,7 @@ class CreateEditQuestionAnswers extends Component
     use WithCrud;
 
     private static $model = \App\Models\Question::class;
-    public array $initialData = ['sort_order' => 0];
+    public array $initialData = ['sort_order' => 0, 'is_correct' => 0];
     public int $quizId; // passed in with component
     public string $message = 'Question Saved!';
 
@@ -39,7 +39,7 @@ class CreateEditQuestionAnswers extends Component
                 $collection = collect($this->answers);
                 $filtered = $collection->where('is_correct', true);
                 if (count($filtered) <> 1) {
-                    $fail('please select exactly 1 correct answer');
+                    $fail('Please select exactly 1 correct answer');
                 }
             },],
         ];
@@ -74,14 +74,6 @@ class CreateEditQuestionAnswers extends Component
 
     public function save()
     {
-
-        // $collection = collect($this->answers);
-        // $filtered = $collection->where('is_correct', true);
-        // if (count($filtered) <> 1) {
-        //     dd('please select 1 correct answer');
-        // }
-
-
         $this->validate();
         $this->editing->save();
         $this->handleAnswers();
@@ -106,7 +98,6 @@ class CreateEditQuestionAnswers extends Component
                 : $this->editing->answers()->create($answer); // new record, CREATE it
         }
 
-        // dd($this->removeAnswers);
         foreach ($this->removeAnswers as $id) {
             $answer = Answer::find($id);
             $answer ? $answer->delete() : null;
@@ -136,11 +127,7 @@ class CreateEditQuestionAnswers extends Component
             ? array_push($this->removeAnswers, $this->answers[$index]['id'])
             : null;
 
-        // remove from array
         unset($this->answers[$index]);
-
-        // $this->answers = array_values($this->answers);
-
     }
 
     public function render()

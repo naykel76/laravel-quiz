@@ -23,7 +23,7 @@
 
     @empty
 
-        <p class="bx warning-light fw7">There are no questions available for this quiz.</p>
+        <p class="bx warning-light fw-7">There are no questions available for this quiz.</p>
 
     @endforelse
 
@@ -36,7 +36,7 @@
 
                 <div class="bx-title"> {{ isset($editing->id) ? 'Edit' : 'Create' }}</div>
 
-                <x-iconit.close wire:click.prevent="$toggle('showModal')" icon="close" class="close sm" />
+                <x-gt-icon-cross wire:click.prevent="$toggle('showModal')" icon="close" class="close sm" />
 
             </div>
 

@@ -3,27 +3,3 @@
 # Laravel and Livewire Quiz Application
 
 
-
-## Quiz Table Component
-
-The quiz-table is a stand alone component used to display quizzes from the database. There is no CRUD logic directly acciosated with this component, and all actions such as edit, create, and delete are events emitted to the create-edit-quiz component. This table could optionallly include the withDataTable trait giving it access to search and sort functionality.
-
-
-
-
-## Data Structures
-
-    $this->answers = [
-        [
-            'answer_text' => 'This is the answer text',
-            'sort_order' => 0,
-            'is_correct' => 0,
-            'question_id' => 72
-        ],
-        [
-            'answer_text' => 'This is another answer',
-            'sort_order' => 0,
-            'is_correct' => 0,
-            'question_id' => 72
-        ],
-    ];
