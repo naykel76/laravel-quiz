@@ -1,21 +1,22 @@
 {
-  "main": {
-    "links": [
-      {
-        "name":"Admin",
-        "route_name": "admin",
-        "icon": "dashboard",
-        "exclude_route": true
-      }
-    ]
-  },
-  "dev": {
-    "links": [
-      {
-        "name":"Dev",
-        "route_name": "dev",
-        "exclude_route": true
-      }
-    ]
-  }
+	"main": {
+		"links": [
+			{
+				"name": "Admin",
+				"route_name": "admin",
+				"icon": "dashboard-o",
+				"exclude_route": true
+			}
+		]
+	},
+	"user": {
+		"links": [
+			{
+				"name": "Admin",
+				"route_name": "admin",
+				"icon": "dashboard-o",
+				"exclude_route": true
+			}
+		]
+	}
 }
