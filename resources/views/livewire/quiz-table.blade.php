@@ -1,7 +1,7 @@
 <div>
 
     <div class="mb">
-        <x-gt-button-add wire:click.prevent="$emitTo('create-edit-quiz', 'create')" button-text="Add Quiz" />
+        <x-gt-button-create wire:click.prevent="$emitTo('create-edit-quiz', 'create')" text="Add Quiz" />
     </div>
 
     <div class="bx">

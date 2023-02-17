@@ -2,7 +2,7 @@
 
     <div class="bx-header blue3 flex va-c">
         <div class="bx-title mr-2">Quiz Questions</div>
-        <x-gt-button-add wire:click.prevent="create" button-text="Add Question" />
+        <x-gt-button-create wire:click.prevent="create" text="Add Question" />
     </div>
 
     {{-- display a list of questions --}}
@@ -23,7 +23,7 @@
 
     @empty
 
-        <p class="bx warning-light fw-7">There are no questions available for this quiz.</p>
+        <p class="bx warning-light fw7">There are no questions available for this quiz.</p>
 
     @endforelse
 
@@ -64,7 +64,7 @@
 
                     @forelse($answers as $index => $answer)
 
-                        <div class="flex gg">
+                        <div class="flex gg-1.5">
 
                             <x-gt-checkbox wire:model="answers.{{ $index }}.is_correct" for="answers.{{ $index }}.is_correct" ignoreErrors />
 
@@ -92,11 +92,11 @@
 
         <div class="bx-footer flex space-between">
 
-            <x-gt-button-add wire:click.prevent="addEmptyRow" button-text="Add Option" />
+            <x-gt-button-create wire:click.prevent="addEmptyRow" text="Add Option" />
 
             <div>
                 <button wire:click.prevent="cancel" class="btn">Cancel</button>
-                <x-gt-button-save wire:click.prevent="save" button-text="Save All" />
+                <x-gt-button-save wire:click.prevent="save" text="Save All" />
             </div>
 
         </div>
